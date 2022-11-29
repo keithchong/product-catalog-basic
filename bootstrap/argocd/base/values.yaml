@@ -1,0 +1,51 @@
+default:
+  app:
+    enabled: true
+    enableAutoSync: true
+    autoSyncPrune: false
+    project: argocd-image-updater
+    destination:
+      namespace: openshift-gitops
+      server: https://kubernetes.default.svc
+    source:
+      repoURL: https://github.com/gnunn1/product-catalog-basic
+      targetRevision: main
+
+projects:
+
+  product-catalog-basic:
+    description: Project for Product Catalog Basic Application
+    namespace: openshift-gitops
+    sourceRepos:
+    - '*'
+    destinations: |
+      - namespace: 'product-catalog-dev'
+        server: https://kubernetes.default.svc
+      - namespace: 'product-catalog-test'
+        server: https://kubernetes.default.svc
+      - namespace: 'product-catalog-prod'
+        server: https://kubernetes.default.svc
+    extraFields: |
+      clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+
+applications:
+
+  product-catalog-dev:
+    destination:
+      namespace: product-catalog-dev
+    source:
+      path: environments/overlays/dev
+
+  product-catalog-test:
+    destination:
+      namespace: product-catalog-test
+    source:
+      path: environments/overlays/test
+
+  product-catalog-prod:
+    destination:
+      namespace: product-catalog-prod
+    source:
+      path: environments/overlays/prod
