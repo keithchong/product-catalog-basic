@@ -1,5 +1,7 @@
 default:
   app:
+    labels:
+      app.kubernetes.io/name: product-catalog
     enabled: true
     enableAutoSync: true
     autoSyncPrune: false

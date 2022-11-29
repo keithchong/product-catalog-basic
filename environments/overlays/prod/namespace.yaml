@@ -6,4 +6,6 @@ metadata:
     openshift.io/display-name:  Product Catalog Prod
     app.openshift.io/vcs-uri: https://github.com/gnunn-gitops/product-catalog
     app.openshift.io/vcs-ref: main
+  labels:
+    argocd.argoproj.io/managed-by: openshift-gitops
   name: product-catalog-prod
