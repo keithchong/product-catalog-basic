@@ -4,7 +4,7 @@ metadata:
   annotations:
     openshift.io/description: Project for development environment of product catalog application
     openshift.io/display-name:  Product Catalog Development
-    app.openshift.io/vcs-uri: https://github.com/gnunn1/product-catalog-simple
+    app.openshift.io/vcs-uri: https://github.com/keithchong/product-catalog-basic
     app.openshift.io/vcs-ref: main
   labels:
     argocd.argoproj.io/managed-by: openshift-gitops
