@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: Project for development environment of product catalog application
+    openshift.io/display-name:  Product Catalog Development
+    app.openshift.io/vcs-uri: https://github.com/gnunn1/product-catalog-simple
+    app.openshift.io/vcs-ref: main
+  name: product-catalog-dev
