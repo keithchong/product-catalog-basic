@@ -21,11 +21,11 @@ projects:
     sourceRepos:
     - '*'
     destinations: |
-      - namespace: 'dev'
+      - namespace: 'dev-product-catalog'
         server: https://kubernetes.default.svc
-      - namespace: 'test'
+      - namespace: 'test-product-catalog'
         server: https://kubernetes.default.svc
-      - namespace: 'prod'
+      - namespace: 'prod-product-catalog'
         server: https://kubernetes.default.svc
     extraFields: |
       clusterResourceWhitelist:
@@ -34,26 +34,26 @@ projects:
 
 applications:
 
-  dev:
+  dev-product-catalog:
     labels:
-      openshift.environments/name: dev
+      openshift.gitops/environment: dev-product-catalog
     destination:
-      namespace: dev
+      namespace: dev-product-catalog
     source:
       path: environments/overlays/dev
 
-  test:
+  test-product-catalog:
     labels:
-      openshift.environments/name: test
+      openshift.gitops/environment: test-product-catalog
     destination:
-      namespace: test
+      namespace: test-product-catalog
     source:
       path: environments/overlays/test
 
-  prod:
+  prod-product-catalog:
     labels:
-      openshift.environments/name: prod
+      openshift.gitops/environment: prod-product-catalog
     destination:
-      namespace: prod
+      namespace: prod-product-catalog
     source:
       path: environments/overlays/prod
