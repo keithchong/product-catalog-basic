@@ -1,4 +1,4 @@
-namespace: prod-product-catalog
+namespace: prod
 resources:
 - namespace.yaml
 - github.com/gnunn-gitops/product-catalog/components/apps/database/base
