@@ -1,6 +1,0 @@
-namespace: sandbox-product-catalog
-resources:
-- namespace.yaml
-- github.com/gnunn-gitops/product-catalog/components/apps/database/base
-- github.com/gnunn-gitops/product-catalog/components/apps/client/base
-- github.com/gnunn-gitops/product-catalog/components/apps/server/base
