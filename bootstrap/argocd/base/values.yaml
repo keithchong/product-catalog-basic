@@ -27,6 +27,8 @@ projects:
         server: https://kubernetes.default.svc
       - namespace: 'prod-product-catalog'
         server: https://kubernetes.default.svc
+      - namespace: 'sandbox-product-catalog'
+        server: https://kubernetes.default.svc        
     extraFields: |
       clusterResourceWhitelist:
       - group: '*'
