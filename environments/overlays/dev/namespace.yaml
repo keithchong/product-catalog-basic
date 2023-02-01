@@ -6,4 +6,6 @@ metadata:
     openshift.io/display-name: Product Catalog Development
     app.openshift.io/vcs-uri: https://github.com/keithchong/product-catalog-basic.git
     app.openshift.io/vcs-ref: main
-  name: product-catalog-dev
+  labels:
+    argocd.argoproj.io/managed-by: openshift-gitops
+  name: dev-product-catalog
